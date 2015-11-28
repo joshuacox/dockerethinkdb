@@ -1,0 +1,13 @@
+---
+- name: DockeRethinkDB
+  vars:
+     NAME_contents: "{{ lookup('file', 'NAME') }}"
+  hosts: "{{ NAME_contents }}"
+  sudo: True
+  tasks:
+  - name: DockeRethinkDB
+    docker:
+      name: "{{ NAME_contents }}"
+      image: rethinkdb
+      state: reloaded
+      restart_policy: always
