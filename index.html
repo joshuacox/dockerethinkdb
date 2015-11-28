@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Dockerethinkdb by joshuacox</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Dockerethinkdb</h1>
+        <h2>Docker  container with RethinkDB inside</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/joshuacox/dockerethinkdb/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/joshuacox/dockerethinkdb/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/joshuacox/dockerethinkdb" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="dockerethinkdb" class="anchor" href="#dockerethinkdb" aria-hidden="true"><span class="octicon octicon-link"></span></a>DockeRethinkDB</h1>
+
+<p>Docker  container with RethinkDB inside</p>
+
+<p><code>make server</code> is the intended use,</p>
+
+<p>you then should be able to link another container like so:</p>
+
+<pre><code>docker run --name some-app --link dockerethinkdb:rdb -d application-that-uses-rdb
+</code></pre>
+
+<p>you’ll need an inventory file in /etc/ansible/hosts with some lines like:</p>
+
+<pre><code>dockerethinkdbhost ansible_ssh_port=22 ansible_ssh_host=127.0.0.1 ansible_ssh_user=root
+
+[dockerethinkdb]
+dockerethinkdbhost
+</code></pre>
+
+<p>there are also the <code>make boostrap</code> and <code>make docker</code> recipes these will bootstrap ansible (i.e. install python and ansible) and install docker on a debian host respectively</p>
+
+<p><a href="http://joshuacox.github.io/">Please check out my blog for other associated miscellanea:</a>
+<a href="http://joshuacox.github.io/">joshuacox.github.io</a></p>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-69335315-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
