@@ -5,7 +5,7 @@ help:
 	@echo "-- Help Menu"
 	@echo ""   1. make server       - run server
 
-server: port serverplay
+server: serverplay
 
 serverplay:
 	ansible-playbook `cat NAME`.yml
@@ -17,11 +17,6 @@ docker:
 
 bootstrap:
 	ansible-playbook bootstrapAnsible.yml
-
-port:
-	@while [ -z "$$port" ]; do \
-		read -r -p "Enter the port of the Docker server you wish to associate with this agent : " port; echo "$$port">>port; cat port; \
-	done ;
 
 NAME:
 	@while [ -z "$$NAME" ]; do \
