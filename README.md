@@ -1,4 +1,4 @@
-# dockerethinkdb
+# DockeRethinkDB
 Docker  container with RethinkDB inside
 
 `make server` is the intended use,
